@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DavidDupe Store</title>
 
-  <!-- PayPal SDK (load once) -->
+  <!-- PayPal SDK -->
   <script 
     src="https://www.paypal.com/sdk/js?client-id=BAA3SuHRJ8ZqAly5q6Z8-LH2_z-3P0Pm1tBkXfewbLfIrCKRKXJW9m_rL7wEa-idjNztY4nINHF-NMSFzg&components=hosted-buttons&disable-funding=venmo&currency=USD">
   </script>
 
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <style>
@@ -29,23 +30,35 @@
     }
 
     header {
-      background: rgba(20,0,0,0.85);
+      background: rgba(20, 0, 0, 0.85);
       padding: 25px;
       text-align: center;
       border-bottom: 3px solid #ff3333;
     }
-    header h1 { font-size: 2.8em; color: #ff3333; margin:0; }
-    .nav-btns { margin-top: 15px; }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #ff3333;
+      margin: 0;
+    }
+
+    .nav-btns {
+      margin-top: 15px;
+    }
 
     .btn {
-      background: #ff3333; color: black;
-      padding: 12px 25px; margin: 5px 0;
-      font-weight: bold; border: none; border-radius: 8px;
-      text-decoration: none; cursor: pointer;
+      background: #ff3333;
+      color: black;
+      padding: 12px 25px;
+      margin: 5px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
       transition: 0.3s ease-in-out;
-      width: 100%;
-      font-size: 1em;
     }
+
     .btn:hover {
       background: #cc0000;
       box-shadow: 0 0 20px #ff3333, 0 0 30px #cc0000;
@@ -55,50 +68,40 @@
     .container {
       padding: 30px 20px;
       margin: 20px auto;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 10px;
       backdrop-filter: blur(5px);
-      max-width: 900px;
-    }
-
-    .store-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      justify-items: center;
+      max-width: 800px;
     }
 
     .store-item {
-      background: rgba(20,0,0,0.75);
+      background: rgba(20, 0, 0, 0.75);
       border: 2px solid #ff3333;
       border-radius: 10px;
-      width: 100%;
-      max-width: 260px;
+      padding: 20px;
       text-align: center;
-      padding: 15px;
     }
 
-    .store-item h3 { margin: 10px 0 5px; color: #ff7777; }
+    .store-item h3 {
+      margin-top: 0;
+      color: #ff7777;
+    }
+
     .price {
       font-size: 1.2em;
       margin: 5px 0;
       color: #ff3333;
     }
+
     .desc {
       font-size: 0.95em;
       margin: 10px 0 15px;
-      min-height: 50px;
-    }
-
-    @media (max-width:600px) {
-      .store-grid { grid-template-columns: 1fr; }
-      .btn { font-size: 1.1em; }
     }
 
     footer {
       text-align: center;
       padding: 15px;
-      background: rgba(10,0,0,0.85);
+      background: rgba(10, 0, 0, 0.85);
       border-top: 2px solid #ff3333;
       font-size: 0.9em;
     }
@@ -111,184 +114,62 @@
   <header>
     <h1>DavidDupe Store</h1>
     <div class="nav-btns">
-      <a class="btn" href="https://discord.gg/YOUR_DISCORD_INVITE" target="_blank">Join Discord</a>
-      <a class="btn" href="https://daviddupe.minehut.gg" target="_blank">Main Site</a>
+      <a class="btn" href="https://discord.gg/daviddupe" target="_blank">Join Discord</a>
+      <a class="btn" href="https://daviddupe.minehut.gg" target="_blank">Main Website</a>
     </div>
   </header>
 
   <div class="container">
-    <h2>Crate Keys</h2>
-    <div class="store-grid">
-      <div class="store-item">
-        <h3>Vote Key</h3>
-        <div class="price">$1.00</div>
-        <div class="desc">Unlocks the Vote Crate with small rewards.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_VOTE_KEY" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-
-      <div class="store-item">
-        <h3>Legendary Key</h3>
-        <div class="price">$2.50</div>
-        <div class="desc">Top-tier key with huge prize pool.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_LEGENDARY_KEY" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-
-      <div class="store-item">
-        <h3>Mystery Key</h3>
-        <div class="price">$1.75</div>
-        <div class="desc">Win something random!</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_MYSTERY_KEY" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-
-      <div class="store-item">
-        <h3>Epic Key</h3>
-        <div class="price">$2.00</div>
-        <div class="desc">Great loot awaits.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_EPIC_KEY" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-
-      <div class="store-item">
-        <h3>Rare Key</h3>
-        <div class="price">$1.50</div>
-        <div class="desc">Unlock rare crate rewards.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_RARE_KEY" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-
-      <div class="store-item">
-        <h3>Starter Key</h3>
-        <div class="price">$0.75</div>
-        <div class="desc">Perfect for beginners!</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_STARTER_KEY" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
+    <div class="store-item">
+      <h3>VIP</h3>
+      <div class="price">$3.00</div>
+      <div class="desc">Colored chat + /kit vip perks.</div>
+      <div id="paypal-container-GWFBGPDDVWPP6"></div>
     </div>
   </div>
 
-  <div class="container">
-    <h2>Ranks</h2>
-    <div class="store-grid">
-      <div class="store-item">
-        <h3>VIP</h3>
-        <div class="price">$3.00</div>
-        <div class="desc">Colored chat + /kit vip perks.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_VIP" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>VIP+</h3>
-        <div class="price">$5.00</div>
-        <div class="desc">Extra kits & VIP bonuses.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_VIP_PLUS" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>MVP</h3>
-        <div class="price">$8.00</div>
-        <div class="desc">Big perks & colored tag.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_MVP" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>MVP+</h3>
-        <div class="price">$12.00</div>
-        <div class="desc">All MVP perks + priority.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_MVP_PLUS" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>ELITE</h3>
-        <div class="price">$20.00</div>
-        <div class="desc">Elite tag + exclusive gear.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_ELITE" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>LEGEND</h3>
-        <div class="price">$30.00</div>
-        <div class="desc">Legendary status & all perks.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_LEGEND" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>GOD</h3>
-        <div class="price">$45.00</div>
-        <div class="desc">Top rank with godlike powers.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_GOD" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>PRIDE</h3>
-        <div class="price">$60.00</div>
-        <div class="desc">All-inclusive ultimate rank.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_PRIDE" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-    </div>
-  </div>
+  <footer>
+    <p>&copy; 2025 DavidDupe. Fan-made Minecraft server store.</p>
+  </footer>
 
-  <div class="container">
-    <h2>Bundles</h2>
-    <div class="store-grid">
-      <div class="store-item">
-        <h3>Starter Bundle</h3>
-        <div class="price">$8.00</div>
-        <div class="desc">1 Starter Key + VIP Rank.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID_STARTER_BUNDLE" />
-          <input type="submit" value="Buy Now" class="btn" />
-        </form>
-      </div>
-      <div class="store-item">
-        <h3>Explorer Bundle</h3>
-        <div class="price">$10.00</div>
-        <div class="desc">2 Rare Keys + VIP+ Rank.</div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick"
+  <!-- Render PayPal Button -->
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "GWFBGPDDVWPP6",
+    }).render("#paypal-container-GWFBGPDDVWPP6");
+  </script>
+
+  <!-- Load particles -->
+  <script>
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ff0000" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1, outMode: "out" },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ff0000",
+          opacity: 0.15,
+          width: 1
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 150, line_linked: { opacity: 0.3 } },
+          push: { quantity: 4 }
+        }
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+</html>
